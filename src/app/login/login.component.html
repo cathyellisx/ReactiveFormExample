@@ -1,0 +1,38 @@
+<div class="card w-50 m-3">
+
+  <div class="card-header text-center">
+    Angular 8 Reactive Form Login Example
+  </div>
+
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-row justify-content-center">
+        <div class="form-group col-4">
+          <label>Email: </label>
+          <input type="email" formControlName="email" class="form-control"
+                 placeholder="name@example.com"
+                 [ngClass]="{'is-invalid': loggedin && f.email.errors}"/>
+          <div *ngIf="loggedin && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row justify-content-center">
+        <div class="form-group col-4">
+          <label>Password:  </label>
+          <input type="password" formControlName="email" class="form-control"
+                 placeholder="Password"
+                 [ngClass]="{'is-invalid': loggedin && f.password.errors}"/>
+          <div *ngIf="loggedin && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.minlength">Password must be a minimum of 6 characters</div>
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-right">
+        <button class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
