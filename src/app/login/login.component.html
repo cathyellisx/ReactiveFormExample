@@ -1,4 +1,4 @@
-<div class="card w-50 m-3">
+<div class="card w-50 m-3 mx-auto">
 
   <div class="card-header text-center">
     Angular 8 Reactive Form Login Example
@@ -21,11 +21,10 @@
       <div class="form-row justify-content-center">
         <div class="form-group col-4">
           <label>Password:  </label>
-          <input type="password" formControlName="email" class="form-control"
+          <input type="password" formControlName="password" class="form-control"
                  placeholder="Password"
                  [ngClass]="{'is-invalid': loggedin && f.password.errors}"/>
           <div *ngIf="loggedin && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.minlength">Password must be a minimum of 6 characters</div>
             <div *ngIf="f.password.errors.required">Password is required</div>
           </div>
         </div>
